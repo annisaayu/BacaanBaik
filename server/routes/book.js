@@ -1,7 +1,12 @@
 const router = require('express').Router()
-const {homepage, signin, signup} = require('../controllers/user')
+const images = require('../middlewares/image')
+const { addBook, findAllBook, findOneBook, deleteBook } = require('../controllers/book');
+const {auth} = require('../middlewares/auth')
 
-router.post('/login', signin)
-router.post('/register', signup)
+
+router.get('/', auth, findAllBook)
+router.post('/add', auth, images.multer.single('image'), images.sendUploadToGCS, addBook)
+router.get('/:id', auth, findOneBook)
+router.delete('/:id/delete', auth, deleteBook)
 
 module.exports = router

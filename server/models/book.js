@@ -1,17 +1,17 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const userSchema = mongoose.Schema({
-  judul: {
+const bookSchema = mongoose.Schema({
+  title: {
       type:String
   },
-  penerbit: {
+  publisher: {
       type: String,
   },
-  penulis: {
+  writer: {
     type: String,
   },
-  gambar: {
+  image: {
     type: String,
   },
   user: {
@@ -22,6 +22,6 @@ const userSchema = mongoose.Schema({
   timestamps: true
 })
 
-let user = mongoose.model('user', userSchema)
+let book = mongoose.model('book', bookSchema)
 
-module.exports = user
+module.exports = book

@@ -10,12 +10,14 @@
   "author": "Annisa Ayu Pertiwi",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.4",
+    "@google-cloud/storage": "^1.7.0",
     "bcrypt": "^2.0.1",
+    "cors": "^2.8.4",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.2.1",
     "mongoose": "^5.1.0",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "multer": "^1.3.0"
   }
 }
