@@ -13,9 +13,9 @@
             <label for="exampleInputPassword1">Password</label>
             <input type="password" v-model="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>
-          <button type="submit" class="btn btn-primary" @click="login">Login</button>
+          <button type="submit" class="btn btn-primary" @click="register">Login</button>
         </form>
-        <p>don't have an account ? <router-link to="/Register">create one here</router-link></p>
+        <p>don't have an account ? <router-link to="/login">create one here</router-link></p>
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@ export default {
         console.log(data)
         localStorage.setItem('token', data.token)
         localStorage.setItem('name', data.name)
-        this.$router.push('books')
+        this.$router.push('homepage')
       })
       .catch( err => {
         alert('email dan password salah')
