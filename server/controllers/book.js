@@ -52,11 +52,26 @@ module.exports = {
       })
   },
   findOneBook: (req, res, next) => {
+    mBook
+      .findOne({_id: req.params.id})
+      .exec()
+      .then( book => {
+        res.status(200).json({
+          message: `detail book id ${req.params.id}`,
+          book
+        })
+      })
+      .catch( err => {
+        res.json({
+          err
+        })
+      })
 
   },
   findAllBook: (req, res, next) => {
     mBook
       .find()
+      .populate('user')
       .exec()
       .then( books => {
         res.status(200).json({

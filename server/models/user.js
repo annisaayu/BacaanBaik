@@ -16,7 +16,8 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
         require: [true, 'Password required']
-    }
+    },
+    books: [{ type: Schema.Types.ObjectId, ref: 'book' }]
 }, {
     timestamps: true
 })

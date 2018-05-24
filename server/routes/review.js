@@ -1,7 +1,8 @@
 const router = require('express').Router()
-const {homepage, signin, signup} = require('../controllers/user')
+const { addReviews, allReviews } = require('../controllers/review')
+const {auth} = require('../middlewares/auth')
 
-router.post('/login', signin)
-router.post('/register', signup)
+router.post('/:bookid/add-review', auth, addReviews)
+router.get('/:bookid', auth, allReviews)
 
 module.exports = router
