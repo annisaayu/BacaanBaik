@@ -49,7 +49,7 @@ export default {
         console.log(data)
         localStorage.setItem('token', data.token)
         localStorage.setItem('name', data.name)
-        this.$router.push('home')
+        this.$router.push('homepage')
       })
       .catch( err => {
         alert('email dan password salah')
